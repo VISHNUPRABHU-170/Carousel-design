@@ -1,0 +1,86 @@
+/** Media Queries for Small Device **/
+@media (max-width: $small-device-max-width) {
+  header {
+    nav:first-child {
+      display: none;
+    }
+
+    nav:last-child {
+      display: block;
+      @include flex-box($justify-content: space-between, $align-items: center);
+
+      ul {
+        padding: 0px 10px;
+      }
+
+      ul:last-child {
+        li.nav-icon {
+          i {
+            font-size: 30px;
+          }
+        }
+
+        li.nav-links {
+          position: relative;
+          z-index: 1;
+          ul {
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 180px;
+            border-radius: 15px;
+            background-color: black;
+            color: $text-animate-color;
+
+            li {
+              width: 100%;
+              padding: 10px 0px;
+              text-align: center;
+              cursor: pointer;
+            }
+
+            li:first-child {
+              border-top-left-radius: 12px;
+              border-top-right-radius: 12px;
+            }
+
+            li:last-child {
+              border-bottom-left-radius: 12px;
+              border-bottom-right-radius: 12px;
+            }
+
+            li:hover {
+              color: black;
+              background-color: $text-animate-color;
+            }
+          }
+        }
+      }
+
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+
+  .title-section {
+    p {
+      width: 500px;
+    }
+  }
+
+  .carousel-section {
+    @include flex-box($flex-direction: column, $gap: 20px);
+
+    .carousel-container {
+      @include flex-box($gap: 10px, $justify-content: center);
+
+      .carousels {
+        width: 180px;
+      }
+    }
+  }
+}

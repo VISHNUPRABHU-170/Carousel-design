@@ -1,0 +1,26 @@
+@media (min-width: $xl-device-min-width) and (max-width: $xl-device-max-width) {
+  .title-section {
+    p {
+      width: 850px;
+    }
+  }
+
+  .carousel-section {
+    @include flex-box($flex-direction: column);
+
+    .title-container {
+      margin-left: 40px;
+      padding: 0px 105px;
+      @include flex-box($justify-content: space-between, $align-items: center);
+    }
+
+    .carousel-container {
+      padding: 0px 100px;
+      @include flex-box($gap: 20px);
+
+      .carousels {
+        width: 750px;
+      }
+    }
+  }
+}

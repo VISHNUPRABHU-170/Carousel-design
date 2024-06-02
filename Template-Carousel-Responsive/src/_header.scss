@@ -1,0 +1,141 @@
+@import "./mixins";
+
+header {
+  nav:first-child {
+    @include flex-box($justify-content: space-between, $align-items: stretch);
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        padding: 5px 20px;
+        cursor: pointer;
+      }
+    }
+
+    ul:first-child {
+      margin-left: 0px;
+      @include flex-box($align-items: center);
+    }
+
+    ul:last-child {
+      @include flex-box($gap: 2px, $align-items: stretch);
+
+      li {
+        @include flex-box($align-items: center);
+      }
+
+      li.text-login,
+      li.text-menu,
+      li.text-subsribe {
+        @include text(
+          $fontWeight: bold,
+          $letter-spacing: $letter-spacing-medium
+        );
+
+        &:hover {
+          color: $nav-hover-color;
+        }
+      }
+
+      li.search-icon {
+        padding: 0;
+
+        i {
+          color: $nav-icons-color;
+          font-size: $serch-icon-size;
+
+          &:hover {
+            color: $nav-hover-color;
+          }
+        }
+      }
+
+      li.text-subscribe {
+        z-index: 1;
+        position: relative;
+        background-color: $background-color;
+        @include flex-box($align-items: center);
+        @include text(
+          $fontSize: $font-size-small,
+          $cl: $text-color,
+          $fontWeight: bold,
+          $letter-spacing: $letter-spacing-small
+        );
+
+        &::before {
+          @include bttn-animation(
+            $content: "",
+            $width: 0,
+            $height: 100%,
+            $position: absolute,
+            $top: 0,
+            $left: 0,
+            $bg-color: $text-animate-color,
+            $transition-property: width,
+            $time-function: 0.3s,
+            $z-index: -1
+          );
+        }
+
+        &:hover {
+          color: $nav-text-color;
+        }
+
+        &:hover::before {
+          width: 100%;
+        }
+      }
+
+      li.text-newsletter {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+          @include bttn-animation(
+            $content: "",
+            $width: 73%,
+            $height: 2px,
+            $position: absolute,
+            $bottom: 10px,
+            $bg-color: $text-animate-color,
+            $transition-property: height,
+            $time-function: 0.3s,
+            $z-index: -1
+          );
+        }
+
+        &:hover::before {
+          height: 50%;
+        }
+      }
+
+      li.text-menu {
+        @include flex-box($gap: 5px, $align-items: center);
+
+        i {
+          color: $nav-icons-color;
+          font-size: $menu-icon-size;
+        }
+
+        &:hover i {
+          color: $nav-hover-color;
+        }
+      }
+    }
+  }
+
+  nav:last-child {
+    display: none;
+  }
+}
+
+.breakline {
+  @include position($val: sticky, $top: 0);
+  height: 1px;
+  background-color: $breakline-color;
+}
+
+@import './media-queries/smallDevice';

@@ -1,0 +1,153 @@
+@import "./mixins";
+
+/** Media Queries **/
+@import "./media-queries/smallDevice";
+@import "./media-queries/mediumDevice";
+@import "./media-queries/largeDevice";
+@import "./media-queries/xLargeDevice";
+@import "./media-queries/xxLargeDevice";
+
+section {
+  padding: 100px 0px;
+  background-color: $background-color;
+  @include flex-box($gap: 70px, $flex-direction: column, $align-items: center);
+  @include text($cl: $text-color, $letter-spacing: $letter-spacing-medium);
+}
+
+.title-section {
+  @include flex-box($flex-direction: column, $gap: 20px, $align-items: center);
+  text-align: center;
+
+  p {
+    line-height: $line-height;
+    letter-spacing: $letter-spacing-none;
+  }
+
+  button {
+    position: relative;
+    z-index: 1;
+    @include bttn($width: 165px);
+    cursor: pointer;
+    @include text(
+      $cl: $text-color,
+      $fontWeight: bold,
+      $letter-spacing: $letter-spacing-medium
+    );
+
+    &::before {
+      @include bttn-animation(
+        $content: "",
+        $width: 135px,
+        $height: 2px,
+        $position: absolute,
+        $bottom: 0,
+        $bg-color: $text-animate-color,
+        $transition-property: height,
+        $time-function: 0.3s,
+        $z-index: -1
+      );
+    }
+
+    &:hover {
+      color: $text-hover-color;
+    }
+
+    &:hover::before {
+      height: 20px;
+    }
+  }
+}
+
+.carousel-section {
+  .title-container {
+    text-align: center;
+
+    button {
+      position: relative;
+      z-index: 1;
+      @include bttn($width: 165px, $height: 25px);
+      @include text(
+        $cl: $text-color,
+        $fontWeight: bold,
+        $letter-spacing: $letter-spacing-medium,
+        $fontSize: $font-size-small,
+        $text-align: center
+      );
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        @include bttn-animation(
+          $content: "",
+          $width: 95px,
+          $height: 2px,
+          $position: absolute,
+          $bottom: 0,
+          $bg-color: $text-animate-color,
+          $transition-property: height,
+          $time-function: 0.3s,
+          $z-index: -1
+        );
+      }
+
+      &:hover {
+        color: $text-hover-color;
+      }
+
+      &:hover::before {
+        height: 20px;
+      }
+    }
+  }
+
+  .carousel-container {
+    .nav-bttns {
+      margin: 0;
+      display: inline;
+      align-self: center;
+      cursor: pointer;
+      i {
+        font-size: $arrow-size;
+        color: $text-color;
+
+        &:hover {
+          color: $arrow-hover-color;
+        }
+      }
+    }
+
+    .carousels {
+      @include flex-box($gap: 10px);
+      overflow: hidden;
+
+      .cards {
+        img {
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.2);
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-section {
+  margin-top: 100px;
+  word-spacing: -20px;
+  @include flex-box($flex-direction: column, $align-items: center, $gap: 20px);
+  @include text(
+    $fontSize: $font-size-large,
+    $fontWeight: bold,
+    $text-align: center,
+    $cl: $text-color
+  );
+
+  .text-decorator {
+    height: 5px;
+    width: 70px;
+    background-color: $text-animate-color;
+  }
+}

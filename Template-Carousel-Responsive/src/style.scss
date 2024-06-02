@@ -1,0 +1,13 @@
+@import "./variables";
+@import "./header";
+@import "./carousel";
+
+/** Root Section **/
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+}

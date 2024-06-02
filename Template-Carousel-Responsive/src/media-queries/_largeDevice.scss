@@ -1,0 +1,19 @@
+@media (min-width: $large-device-min-width) and (max-width: $large-device-max-width) {
+  .title-section {
+    p {
+      width: 750px;
+    }
+  }
+
+  .carousel-section {
+    @include flex-box($flex-direction: column, $gap: 20px);
+
+    .carousel-container {
+      @include flex-box($gap: 20px, $justify-content: center);
+
+      .carousels {
+        width: 570px;
+      }
+    }
+  }
+}

@@ -1,0 +1,581 @@
+/* Responsive breakpoints */
+/** Colors **/
+/** Others **/
+/** Button Section**/
+/** Display Section **/
+/** Text Section **/
+/** Position Section **/
+header nav:first-child {
+  display: flex;
+  gap: 0px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+}
+header nav:first-child ul {
+  margin: 0;
+  padding: 0;
+}
+header nav:first-child ul li {
+  list-style: none;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+header nav:first-child ul:first-child {
+  margin-left: 0px;
+  display: flex;
+  gap: 0px;
+  justify-content: auto;
+  align-items: center;
+  flex-direction: row;
+}
+header nav:first-child ul:last-child {
+  display: flex;
+  gap: 2px;
+  justify-content: auto;
+  align-items: stretch;
+  flex-direction: row;
+}
+header nav:first-child ul:last-child li {
+  display: flex;
+  gap: 0px;
+  justify-content: auto;
+  align-items: center;
+  flex-direction: row;
+}
+header nav:first-child ul:last-child li.text-login,
+header nav:first-child ul:last-child li.text-menu,
+header nav:first-child ul:last-child li.text-subsribe {
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  font-style: none;
+  text-align: start;
+  letter-spacing: 4px;
+}
+header nav:first-child ul:last-child li.text-login:hover,
+header nav:first-child ul:last-child li.text-menu:hover,
+header nav:first-child ul:last-child li.text-subsribe:hover {
+  color: gray;
+}
+header nav:first-child ul:last-child li.search-icon {
+  padding: 0;
+}
+header nav:first-child ul:last-child li.search-icon i {
+  color: rgb(43, 41, 41);
+  font-size: 18px;
+}
+header nav:first-child ul:last-child li.search-icon i:hover {
+  color: gray;
+}
+header nav:first-child ul:last-child li.text-subscribe {
+  z-index: 1;
+  position: relative;
+  background-color: black;
+  display: flex;
+  gap: 0px;
+  justify-content: auto;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+  font-weight: bold;
+  font-size: 0.7rem;
+  font-style: none;
+  text-align: start;
+  letter-spacing: 2px;
+}
+header nav:first-child ul:last-child li.text-subscribe::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  background-color: #fc0;
+  z-index: -1;
+  transition: width 0.3s;
+}
+header nav:first-child ul:last-child li.text-subscribe:hover {
+  color: black;
+}
+header nav:first-child ul:last-child li.text-subscribe:hover::before {
+  width: 100%;
+}
+header nav:first-child ul:last-child li.text-newsletter {
+  position: relative;
+  z-index: 1;
+}
+header nav:first-child ul:last-child li.text-newsletter::before {
+  content: "";
+  width: 73%;
+  height: 2px;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 10px;
+  right: auto;
+  background-color: #fc0;
+  z-index: -1;
+  transition: height 0.3s;
+}
+header nav:first-child ul:last-child li.text-newsletter:hover::before {
+  height: 50%;
+}
+header nav:first-child ul:last-child li.text-menu {
+  display: flex;
+  gap: 5px;
+  justify-content: auto;
+  align-items: center;
+  flex-direction: row;
+}
+header nav:first-child ul:last-child li.text-menu i {
+  color: rgb(43, 41, 41);
+  font-size: 22px;
+}
+header nav:first-child ul:last-child li.text-menu:hover i {
+  color: gray;
+}
+header nav:last-child {
+  display: none;
+}
+
+.breakline {
+  position: sticky;
+  top: 0;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  height: 1px;
+  background-color: white;
+}
+
+/** Media Queries for Small Device **/
+@media (max-width: 767px) {
+  header nav:first-child {
+    display: none;
+  }
+  header nav:last-child {
+    display: block;
+    display: flex;
+    gap: 0px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  header nav:last-child ul {
+    padding: 0px 10px;
+  }
+  header nav:last-child ul:last-child li.nav-icon i {
+    font-size: 30px;
+  }
+  header nav:last-child ul:last-child li.nav-links {
+    position: relative;
+    z-index: 1;
+  }
+  header nav:last-child ul:last-child li.nav-links ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 180px;
+    border-radius: 15px;
+    background-color: black;
+    color: #fc0;
+  }
+  header nav:last-child ul:last-child li.nav-links ul li {
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    cursor: pointer;
+  }
+  header nav:last-child ul:last-child li.nav-links ul li:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  header nav:last-child ul:last-child li.nav-links ul li:last-child {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  header nav:last-child ul:last-child li.nav-links ul li:hover {
+    color: black;
+    background-color: #fc0;
+  }
+  header nav:last-child li {
+    list-style-type: none;
+  }
+  .title-section p {
+    width: 500px;
+  }
+  .carousel-section {
+    display: flex;
+    gap: 20px;
+    justify-content: auto;
+    align-items: auto;
+    flex-direction: column;
+  }
+  .carousel-section .carousel-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: auto;
+    flex-direction: row;
+  }
+  .carousel-section .carousel-container .carousels {
+    width: 180px;
+  }
+}
+/** Button Section**/
+/** Display Section **/
+/** Text Section **/
+/** Position Section **/
+/** Media Queries **/
+/** Media Queries for Small Device **/
+@media (max-width: 767px) {
+  header nav:first-child {
+    display: none;
+  }
+  header nav:last-child {
+    display: block;
+    display: flex;
+    gap: 0px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  header nav:last-child ul {
+    padding: 0px 10px;
+  }
+  header nav:last-child ul:last-child li.nav-icon i {
+    font-size: 30px;
+  }
+  header nav:last-child ul:last-child li.nav-links {
+    position: relative;
+    z-index: 1;
+  }
+  header nav:last-child ul:last-child li.nav-links ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 180px;
+    border-radius: 15px;
+    background-color: black;
+    color: #fc0;
+  }
+  header nav:last-child ul:last-child li.nav-links ul li {
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    cursor: pointer;
+  }
+  header nav:last-child ul:last-child li.nav-links ul li:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  header nav:last-child ul:last-child li.nav-links ul li:last-child {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  header nav:last-child ul:last-child li.nav-links ul li:hover {
+    color: black;
+    background-color: #fc0;
+  }
+  header nav:last-child li {
+    list-style-type: none;
+  }
+  .title-section p {
+    width: 500px;
+  }
+  .carousel-section {
+    display: flex;
+    gap: 20px;
+    justify-content: auto;
+    align-items: auto;
+    flex-direction: column;
+  }
+  .carousel-section .carousel-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: auto;
+    flex-direction: row;
+  }
+  .carousel-section .carousel-container .carousels {
+    width: 180px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .title-section p {
+    width: 650px;
+  }
+  .carousel-section {
+    display: flex;
+    gap: 20px;
+    justify-content: auto;
+    align-items: auto;
+    flex-direction: column;
+  }
+  .carousel-section .carousel-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: auto;
+    flex-direction: row;
+  }
+  .carousel-section .carousel-container .carousels {
+    width: 380px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .title-section p {
+    width: 750px;
+  }
+  .carousel-section {
+    display: flex;
+    gap: 20px;
+    justify-content: auto;
+    align-items: auto;
+    flex-direction: column;
+  }
+  .carousel-section .carousel-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: auto;
+    flex-direction: row;
+  }
+  .carousel-section .carousel-container .carousels {
+    width: 570px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .title-section p {
+    width: 850px;
+  }
+  .carousel-section {
+    display: flex;
+    gap: 0px;
+    justify-content: auto;
+    align-items: auto;
+    flex-direction: column;
+  }
+  .carousel-section .title-container {
+    margin-left: 40px;
+    padding: 0px 105px;
+    display: flex;
+    gap: 0px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .carousel-section .carousel-container {
+    padding: 0px 100px;
+    display: flex;
+    gap: 20px;
+    justify-content: auto;
+    align-items: auto;
+    flex-direction: row;
+  }
+  .carousel-section .carousel-container .carousels {
+    width: 750px;
+  }
+}
+@media (min-width: 1400px) {
+  .title-section p {
+    padding: 0px 200px;
+  }
+  .carousel-section {
+    display: flex;
+    gap: 0px;
+    justify-content: auto;
+    align-items: auto;
+    flex-direction: column;
+  }
+  .carousel-section .title-container {
+    padding: 0px 175px;
+    display: flex;
+    gap: 0px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .carousel-section .carousel-container {
+    padding: 0px 130px;
+    display: flex;
+    gap: 20px;
+    justify-content: auto;
+    align-items: auto;
+    flex-direction: row;
+  }
+  .carousel-section .carousel-container .carousels {
+    width: 60em;
+  }
+}
+section {
+  padding: 100px 0px;
+  background-color: black;
+  display: flex;
+  gap: 70px;
+  justify-content: auto;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-weight: none;
+  font-size: 1rem;
+  font-style: none;
+  text-align: start;
+  letter-spacing: 4px;
+}
+
+.title-section {
+  display: flex;
+  gap: 20px;
+  justify-content: auto;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.title-section p {
+  line-height: 25px;
+  letter-spacing: 0px;
+}
+.title-section button {
+  position: relative;
+  z-index: 1;
+  background-color: black;
+  width: 165px;
+  font-family: "Roboto Mono", monospace;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  font-style: none;
+  text-align: start;
+  letter-spacing: 4px;
+}
+.title-section button::before {
+  content: "";
+  width: 135px;
+  height: 2px;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: auto;
+  background-color: #fc0;
+  z-index: -1;
+  transition: height 0.3s;
+}
+.title-section button:hover {
+  color: black;
+}
+.title-section button:hover::before {
+  height: 20px;
+}
+
+.carousel-section .title-container {
+  text-align: center;
+}
+.carousel-section .title-container button {
+  position: relative;
+  z-index: 1;
+  background-color: black;
+  width: 165px;
+  font-family: "Roboto Mono", monospace;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.7rem;
+  font-style: none;
+  text-align: center;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+.carousel-section .title-container button::before {
+  content: "";
+  content: "";
+  width: 95px;
+  height: 2px;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: auto;
+  background-color: #fc0;
+  z-index: -1;
+  transition: height 0.3s;
+}
+.carousel-section .title-container button:hover {
+  color: black;
+}
+.carousel-section .title-container button:hover::before {
+  height: 20px;
+}
+.carousel-section .carousel-container .nav-bttns {
+  margin: 0;
+  display: inline;
+  align-self: center;
+  cursor: pointer;
+}
+.carousel-section .carousel-container .nav-bttns i {
+  font-size: 46px;
+  color: white;
+}
+.carousel-section .carousel-container .nav-bttns i:hover {
+  color: gray;
+}
+.carousel-section .carousel-container .carousels {
+  display: flex;
+  gap: 10px;
+  justify-content: auto;
+  align-items: auto;
+  flex-direction: row;
+  overflow: hidden;
+}
+.carousel-section .carousel-container .carousels .cards img {
+  transition: transform 0.3s;
+}
+.carousel-section .carousel-container .carousels .cards img:hover {
+  transform: scale(1.2);
+  background-size: cover;
+}
+
+.footer-section {
+  margin-top: 100px;
+  word-spacing: -20px;
+  display: flex;
+  gap: 20px;
+  justify-content: auto;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+  font-size: 3.5rem;
+  font-style: none;
+  text-align: center;
+  letter-spacing: 0px;
+}
+.footer-section .text-decorator {
+  height: 5px;
+  width: 70px;
+  background-color: #fc0;
+}
+
+/** Root Section **/
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+}
+
+/*# sourceMappingURL=styles.css.map */

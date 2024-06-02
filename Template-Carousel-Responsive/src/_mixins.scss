@@ -1,0 +1,74 @@
+/** Button Section**/
+@mixin bttn($width: auto, $height: auto, $bg-color: black) {
+  background-color: $bg-color;
+  width: $width;
+  font-family: "Roboto Mono", monospace;
+  border: none;
+}
+
+@mixin bttn-animation(
+  $content,
+  $width,
+  $height,
+  $position,
+  $top: auto,
+  $left: auto,
+  $bottom: auto,
+  $right: auto,
+  $bg-color,
+  $z-index,
+  $transition-property,
+  $time-function
+) {
+  content: $content;
+  width: $width;
+  height: $height;
+  position: $position;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+  background-color: $bg-color;
+  z-index: $z-index;
+  transition: $transition-property $time-function;
+}
+
+/** Display Section **/
+@mixin flex-box(
+  $flex-direction: row,
+  $gap: 0px,
+  $justify-content: auto,
+  $align-items: auto
+) {
+  display: flex;
+  gap: $gap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+
+/** Text Section **/
+@mixin text(
+  $cl: black,
+  $fontWeight: none,
+  $fontSize: 1rem,
+  $fontStyle: none,
+  $text-align: start,
+  $letter-spacing: 0px
+) {
+  color: $cl;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  font-style: $fontStyle;
+  text-align: $text-align;
+  letter-spacing: $letter-spacing;
+}
+
+/** Position Section **/
+@mixin position($val, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: $val;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
